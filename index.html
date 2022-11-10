@@ -5,8 +5,555 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BTHO ISTM 682</title>
+    <link href="http://fonts.cdnfonts.com/css/felix-titling" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/fontawesome.min.css" integrity="sha512-P9vJUXK+LyvAzj8otTOKzdfF1F3UYVl13+F8Fof8/2QNb8Twd6Vb+VD52I7+87tex9UXxnzPgWA3rH96RExA7A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<style>
+  .jumbotron{
+    
+    margin:15px 0px 0px 0px;
+    background:url('https://www.troy.edu/_assets/sponsored-programs/_images/quad.jpg') no-repeat center top;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    color:white !important;
+    height:250px;
+}
+
+hr {
+  margin: auto 220px;
+}
+
+table.events {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+
+}
+  table.events {
+   position: fixed;
+
+}
+table.events caption {
+  font-size: 1.5em;
+  margin: .5em 0 .75em;
+}
+
+table.events tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table.events th,
+table.events td {
+  padding: .625em;
+  text-align: center;
+
+}
+
+table.events th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background-color:#6D0017;
+  color:white;
+}
+
+@media screen and (max-width: 600px) {
+  table.events {
+    border: 0;
+  }
+
+  table.events caption {
+    font-size: 1.3em;
+  }
+  
+  table.events thead {
+    border: none;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    background-color:#6D0017;
+    color:white;
+  }
+  
+  table.events tr {
+    border-bottom: 3px solid #ddd;
+    display: block;
+    margin-bottom: .625em;
+  }
+  
+  table.events td {
+    border-bottom: 1px solid #ddd;
+    display: block;
+    font-size: .8em;
+    text-align: right;
+  }
+  
+  table.events td::before {
+    /*
+    * aria-label has no advantage, it won't be read inside a table.events
+    content: attr(aria-label);
+    */
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  table.events td:last-child {
+    border-bottom: 0;
+  }
+}
+
+
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table.responsive, .responsive thead, .responsive tbody, .responsive th, .responsive td, .responsive tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.responsive thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+      
+	}
+
+   .responsive thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+      background-color: red;
+	}
+   .responsive thead { 
+      background-color: red;
+	}
+	.responsive tr { border: 1px solid #ccc; }
+	
+	.responsive td { 
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.responsive td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+	
+	/*
+	Label the data
+	*/
+	.responsive td:before { content: attr(data-table-header); }
+}
+
+.table-responsive .bootstrap {
+  min-height: .01%;
+  overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+  .table-responsive.bootstrap {
+    width: 100%;
+    margin-bottom: 15px;
+    overflow-y: hidden;
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+    border: 1px solid #ddd;
+  }
+  .table-responsive.bootstrap > .table {
+    margin-bottom: 0;
+  }
+  .table-responsive.bootstrap > .table tr > th,
+  .table-responsive.bootstrap > .table > thead > tr > td {
+    background-color: red;
+  }
+  .table-responsive.bootstrap > .table > thead > tr > th,
+  .table-responsive.bootstrap > .table > tbody > tr > th,
+  .table-responsive.bootstrap > .table > tfoot > tr > th,
+  .table-responsive.bootstrap > .table > thead > tr > td,
+  .table-responsive.bootstrap > .table > tbody > tr > td,
+  .table-responsive.bootstrap > .table > tfoot > tr > td {
+    white-space: nowrap;
+    
+  }
+  .table-responsive.bootstrap > .table-bordered {
+    border: 0;
+  }
+  .table-responsive.bootstrap > .table-bordered > thead > tr > th:first-child,
+  .table-responsive.bootstrap > .table-bordered > tbody > tr > th:first-child,
+  .table-responsive.bootstrap > .table-bordered > tfoot > tr > th:first-child,
+  .table-responsive.bootstrap > .table-bordered > thead > tr > td:first-child,
+  .table-responsive.bootstrap > .table-bordered > tbody > tr > td:first-child,
+  .table-responsive.bootstrap > .table-bordered > tfoot > tr > td:first-child {
+    border-left: 0;
+  }
+  .table-responsive.bootstrap > .table-bordered > thead > tr > th:last-child,
+  .table-responsive.bootstrap > .table-bordered > tbody > tr > th:last-child,
+  .table-responsive.bootstrap > .table-bordered > tfoot > tr > th:last-child,
+  .table-responsive.bootstrap > .table-bordered > thead > tr > td:last-child,
+  .table-responsive.bootstrap > .table-bordered > tbody > tr > td:last-child,
+  .table-responsive.bootstrap > .table-bordered > tfoot > tr > td:last-child {
+    border-right: 0;
+  }
+  .table-responsive.bootstrap > .table-bordered > tbody > tr:last-child > th,
+  .table-responsive.bootstrap > .table-bordered > tfoot > tr:last-child > th,
+  .table-responsive.bootstrap > .table-bordered > tbody > tr:last-child > td,
+  .table-responsive.bootstrap > .table-bordered > tfoot > tr:last-child > td {
+    border-bottom: 0;
+    
+  }
+
+  table.events th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  background-color:#6D0017;
+  color:white;
+}
+}
+
+.reset-a, .reset-a:hover, .reset-a:visited, .reset-a:focus, .reset-a:active  {
+  text-decoration: none;
+  color: inherit;
+  outline: 0;
+  cursor: auto;
+}
+
+</style>
 </head>
 <body>
-    
-</body>
+    <div class="container-md">
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="jumbotron p-5 text-center bg-image rounded-3 shadow" >
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Troy_Trojans_logo.svg" alt="" height="100" class="">
+                        <div class="mask" style="font-family: 'Felix Titling', sans-serif; background-color: rgba(0, 0, 0, 0.6);">
+                        <h2 style="font-family: 'Felix Titling', sans-serif;" >
+                        Troy University
+                        <hr>
+                    </h2>
+                    <p>
+                        Spring 2022 
+                        Friday, May 13, 2022 
+                        Trojan Arena                    </p>
+                     </div>
+                </div>
+            </div>
+            <br>
+            <div class="col-md-8">
+                <table class="table table-striped">
+                    <tbody>
+                        <thead style="background-color:#6D0017;color:white;">
+                            <td style="text-align: center;" colspan="2" width="381"><i class="fa fa-list" aria-hidden="true"></i> Trip Overview</td>
+                         </thead>
+                       <tr>
+                          <td data-table-header="">Trip Start Date</td>
+                          <td data-table-header="">5/12/2022</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Trip End Date</td>
+                          <td data-table-header="">5/15/2022</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Duration (Days)</td>
+                          <td data-table-header="">4</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">No. of Travelers</td>
+                          <td data-table-header="">9</td>
+                       </tr>
+                       <tr>
+                          <td colspan="2">*Daniel Arrives 11 May 2022&nbsp;</td>
+                       </tr>
+                    </tbody>
+                 </table>
+                 <hr>
+                 <table class="table table-striped">
+                    <tbody>
+                       <thead style="background-color:#6D0017;color:white;">
+                          <td style="text-align: center;" colspan="2" width="381"><i class="fa fa-clipboard" aria-hidden="true"></i>  Event Notes</td>
+                       </thead>
+                       <tr>
+                          <td colspan="2" width="381">Date: Friday, May 13, 2022, 10:00 AM</td>
+                       </tr>
+                       <tr>
+                          <td colspan="2" width="381">Location: Trojan Arena</td>
+                       </tr>
+                       <tr>
+                          <td colspan="2" width="381">Address: Troy University Troy, AL 36081</td>
+                       </tr>
+                       <tr>
+                          <td colspan="2" width="381">Google Maps:&nbsp;<a href="https://www.google.com/maps/dir/31.8021362,-85.9525934/@31.8019868,-85.9558135,17.1z"><strong>Trojan Arena</strong></a>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td colspan="2">&nbsp;</td>
+                       </tr>
+                    </tbody>
+                 </table>
+            </div>
+            <div class="col-md-4">
+                <table class="table table-striped">
+                    <tbody>
+                       <thead style="background-color:#6D0017;color:white;">
+                          <td colspan="2"><i class="fa fa-users" aria-hidden="true"></i>  List of Travelers</td>
+                       </thead>
+                       <thead>
+                          <td data-table-header="">Names</td>
+                          <td data-table-header="">Phone</td>
+                       </thead>
+                       <tr>
+                          <td data-table-header="">Daniel Sirias</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:2819109190">  (281) 910-9190</a></td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Rebecca Bennett</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:9374193157">  (937) 419-3157</a></td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Jose Aguirre</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:8324330254">  (832) 433-0254</a></td> 
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Ana Aguirre</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:2819486311">  (281) 948-6311</a></td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Dina Ramos</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:2818968701">  (281) 896-8701</a></td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Philip Ramos</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:9566397635">  (956) 639-7635</a></td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Ethan Ramos</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Victoria Ramos</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="">Samuel Aguirre</td>
+                          <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:2817015672">  (281) 701-5672</a></td>
+                       </tr>
+                       <tr>
+                        <td data-table-header="">Iqra Barlas</td>
+                        <td data-table-header=""><i class="fa fa-mobile" aria-hidden="true"></i><a href="tel:3462469887"> (346) 246-9887</a></td>
+                       </tr>
+                       <tr></tr>
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-12">
+                <table class="table table-hover table-bordered table-striped responsive table-condensed">
+                    <tbody>
+                       <thead style="background-color:#6D0017;color:white;">
+                        <tr>
+                          <th scope="col">Date</th>
+                          <th scope="col">Time</th>
+                          <th scope="col">Event</th>
+                          <th scope="col">Nights (Stay)</th>
+                          <th scope="col">Lodging Cost/each</th>
+                          <th scope="col">Reservation/Times</th>
+                          <th scope="col">Notes</th>
+                        </tr>
+                       </thead>
+                       <tr>
+                          <td data-table-header="Date">5/12/2022</td>
+                          <td data-table-header="Time">Get on the road to Troy, AL</td>
+                          <td data-table-header="Event">&ensp;</td>
+                          <td data-table-header="Nights (Stay)"> &ensp;</td>
+                          <td data-table-header="Lodging Cost/each">&ensp; </td>
+                          <td data-table-header="Reservation/Times">&ensp; </td>
+                          <td data-table-header="Notes">&ensp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Date">5/12/2022</td>
+                          <td data-table-header="Time">&nbsp;</td>
+                          <td data-table-header="Event"><a href="https://www.booking.com/hotel/us/hotel-highway-two-hundred-thirty-one-troy.html?dksc=2&amp;aid=332731&amp;label=postbooking_confemail">Quality Inn University Area</a>&nbsp;</td>
+                          <td data-table-header="Nights (Stay)">1</td>
+                          <td data-table-header="Lodging Cost/each">$33</td>
+                          <td data-table-header="Reservation/Times">Confirmation: 2182819681</td>
+                          <td data-table-header="Notes"><a href="https://www.google.com/maps/place/Quality+Inn+University+Area/@31.808834,-85.9928987,17z/data=!4m18!1m9!3m8!1s0x888debee987252ab:0xc0333f730f8ea96b!2sQuality+Inn+University+Area!5m2!4m1!1i2!8m2!3d31.808834!4d-85.99071!3m7!1s0x888debee987252ab:0xc0333f730f8ea96b!5m2!4m1!1i2!8m2!3d31.808834!4d-85.99071">Highway 231 at US 29,&nbsp;Troy, AL 36081, United States of America</a>&nbsp;</td>
+                       </tr>
+                       <tr class="table-info">
+                        <td data-table-header="Date">5/13/2022</td>
+                        <td data-table-header="Time">830am</td>
+                        <td data-table-header="Events">Depart for Troy University</td>
+                        <td data-table-header="Nights (Stay)">Click for Address:</td>
+                        <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                        <td data-table-header="Reservation/Times">&nbsp;</td>
+                        <td data-table-header="Notes"><a href="https://goo.gl/maps/4aNsPS71sK7bd4CB7">Trojan Arena</a>&nbsp;
+                        <br> Due to traffic and parking, guests are recommended show at the Trojan Arena one hour before the event start.
+                        </td>
+                       </tr>     
+                       <tr class="table-danger">
+                          <td data-table-header="Date">5/13/2022</td>
+                          <td data-table-header="Time">10am</td>
+                          <td data-table-header="Events">Graduation Ceremony Start</td>
+                          <td data-table-header="Nights (Stay)">Click for Address:</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes"><a href="https://goo.gl/maps/4aNsPS71sK7bd4CB7">Trojan Arena</a>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Date">5/13/2022</td>
+                          <td data-table-header="Time">12pm-1pm</td>
+                          <td data-table-header="Events">Check-Out From Hotel</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes"> Only Rm 103 (parents) is allowed for late check-out</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Date">5/13/2022</td>
+                          <td data-table-header="Time">1pm-3pm</td>
+                          <td data-table-header="Events">Get on the road to Destin, Fl&nbsp;</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes"><a href="https://goo.gl/maps/KqUJHa8SMkshywM47">381 Santa Rosa Blvd, Fort Walton Beach, FL 32548</a>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Date">5/13/2022</td>
+                          <td data-table-header="Time">3pm-4pm</td>
+                          <td data-table-header="Events">Check-In: <br />The Breakers of Fort Walton Beach</td>
+                          <td data-table-header="Nights (Stay)">2</td>
+                          <td data-table-header="Lodging Cost/each">$162</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes"><a href="https://goo.gl/maps/KqUJHa8SMkshywM47">Condo</a>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Time">&nbsp;8:30am</td>
+                          <td data-table-header="Events">Breakfast in the Room</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Time">10am-12pm</td>
+                          <td data-table-header="Events">FREE MORNING TIME</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservations/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr class="table-info">
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Time">Noon</td>
+                          <td data-table-header="Events">Lunch at Destin Boardwalk | Jimmy Buffett's Margaritaville</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservations/Times">&nbsp;</td>
+                          <td data-table-header="Notes">Depending on overall plans and time</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Time">1pm-4:30pm</td>
+                          <td data-table-header="Events">FREE AFTERNOON TIME</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservations/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Time">4:30pm-5:50pm</td>
+                          <td data-table-header="Events">Get Ready for Dinner</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Times">5:50pm</td>
+                          <td data-table-header="Events">Depart to the restaurant&nbsp;</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr class="table-success">
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Times">6:30pm</td>
+                          <td data-table-header="Events">Main Dinner @ Emeril's Coastal Italian&nbsp;</td>
+                          <td data-table-header="Nights (Stay)"><a href="https://emerilsrestaurants.com/wp-content/uploads/2018/10/Emerils-Coastal-Main-Drinks-Menu-1.pdf">Click for Menu</a>&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">$What your heart desires.99&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes"><a href="https://goo.gl/maps/XTKx9wG7eMdDhUK8A">435 Grand Boulevard<br />Miramar Beach FL, 32550<br />(850) 608-7040</a>&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/14/2022</td>
+                          <td data-table-header="Times">9pm</td>
+                          <td data-table-header="Events">FREE EVENING TIME</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/15/2022</td>
+                          <td data-table-header="Times">&nbsp;8:30am</td>
+                          <td data-table-header="Events">Breakfast in the Room @ 830am</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/15/2022</td>
+                          <td data-table-header="Times">11am</td>
+                          <td data-table-header="Events">Check out from Condo</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes">&nbsp;</td>
+                       </tr>
+                       <tr>
+                          <td data-table-header="Dates">5/15/2022</td>
+                          <td data-table-header="Times">Depart to Houston or Airport</td>
+                          <td data-table-header="Events">&nbsp;</td>
+                          <td data-table-header="Nights (Stay)">&nbsp;</td>
+                          <td data-table-header="Lodging Cost/each">&nbsp;</td>
+                          <td data-table-header="Reservation/Times">&nbsp;</td>
+                          <td data-table-header="Notes"><a href="https://goo.gl/maps/SoFGHoczwAncrasE8">11502 Vinedale Dr <br> Houston, TX</a>&nbsp;</td>
+                       </tr>
+                    </tbody>
+                 </table>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+   </body>
 </html>
