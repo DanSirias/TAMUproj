@@ -1,0 +1,25 @@
+body{
+    background-color: #ebebeb;
+}
+
+.jumbotron{
+
+/*https://static.wixstatic.com/media/bb7b70_be15a8eee345492095b8ddf1a2722960~mv2.gif
+https://hellofuture.orange.com/app/uploads/2018/01/Intro-HELLO-FUTURE-1920x1080_v2.gif
+*/
+margin:0px 0px 0px 0px;
+background:url('https://hellofuture.orange.com/app/uploads/2018/01/Intro-HELLO-FUTURE-1920x1080_v2.gif') no-repeat center top;
+background-repeat: no-repeat;
+background-attachment: fixed; 
+background-size: cover;
+color:white !important;
+height:300px;
+}
+
+.tab-pane{
+    width: 100%;
+}
+
+.chart{
+    width: 100%;
+}
